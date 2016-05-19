@@ -1,0 +1,4 @@
+C:\Users\gerardo\Desktop\Upiicsa 2016-2\CBD\CBD3NV61\Number9\Number9\bin\Number9.dll
+C:\Users\gerardo\Desktop\Upiicsa 2016-2\CBD\CBD3NV61\Number9\Number9\bin\Number9.pdb
+C:\Users\gerardo\Desktop\Upiicsa 2016-2\CBD\CBD3NV61\Number9\Number9\obj\Debug\Number9.dll
+C:\Users\gerardo\Desktop\Upiicsa 2016-2\CBD\CBD3NV61\Number9\Number9\obj\Debug\Number9.pdb
