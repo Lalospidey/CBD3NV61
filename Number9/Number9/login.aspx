@@ -4,13 +4,30 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+
+    <title>Numero 9 </title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Usuario:
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    
     </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contraseña:
+    <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button2" runat="server" onclick="Button2_Click" 
+            Text="Iniciar" />
+&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button1" runat="server" Text="Limpiar" 
+            onclick="Button1_Click" />
+    &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
+            Text="Registrar" />
+    </p>
     </form>
 </body>
 </html>

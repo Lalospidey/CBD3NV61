@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Numero9Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Numero9Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="datos_usuarios" EntityType="Numero9Model.datos_usuarios" />
+    <EntitySet Name="drec" EntityType="Numero9Model.drec" />
+    <EntitySet Name="evento" EntityType="Numero9Model.evento" />
+    <EntitySet Name="login" EntityType="Numero9Model.login" />
+    <EntitySet Name="Recinto" EntityType="Numero9Model.Recinto" />
+    <EntitySet Name="sysdiagrams" EntityType="Numero9Model.sysdiagrams" />
+    <EntitySet Name="tipo_login" EntityType="Numero9Model.tipo_login" />
+    <AssociationSet Name="FK_login_datos_usuarios" Association="Numero9Model.FK_login_datos_usuarios">
+      <End Role="datos_usuarios" EntitySet="datos_usuarios" />
+      <End Role="login" EntitySet="login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recinto_drec" Association="Numero9Model.FK_Recinto_drec">
+      <End Role="drec" EntitySet="drec" />
+      <End Role="Recinto" EntitySet="Recinto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_evento_evento" Association="Numero9Model.FK_evento_evento">
+      <End Role="Recinto" EntitySet="Recinto" />
+      <End Role="evento" EntitySet="evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_login_tipo_login" Association="Numero9Model.FK_login_tipo_login">
+      <End Role="tipo_login" EntitySet="tipo_login" />
+      <End Role="login" EntitySet="login" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="datos_usuarios">
+    <Key>
+      <PropertyRef Name="id_datos_usuarios" />
+    </Key>
+    <Property Name="id_datos_usuarios" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Ap_pater" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Ap_mater" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Correo" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="fechan" Type="DateTime" />
+    <NavigationProperty Name="login" Relationship="Numero9Model.FK_login_datos_usuarios" FromRole="datos_usuarios" ToRole="login" />
+  </EntityType>
+  <EntityType Name="drec">
+    <Key>
+      <PropertyRef Name="id_direccion_recinto" />
+    </Key>
+    <Property Name="id_direccion_recinto" Type="Int32" Nullable="false" />
+    <Property Name="Calle" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Colonia" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Delegacion" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Recinto" Relationship="Numero9Model.FK_Recinto_drec" FromRole="drec" ToRole="Recinto" />
+  </EntityType>
+  <EntityType Name="evento">
+    <Key>
+      <PropertyRef Name="id_evento" />
+    </Key>
+    <Property Name="id_evento" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="nombre_evento" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="id_recinto" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" />
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Recinto" Relationship="Numero9Model.FK_evento_evento" FromRole="evento" ToRole="Recinto" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="Id_usuario" />
+    </Key>
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="contraseña" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
+    <Property Name="id_datos_usuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="datos_usuarios" Relationship="Numero9Model.FK_login_datos_usuarios" FromRole="login" ToRole="datos_usuarios" />
+    <NavigationProperty Name="tipo_login" Relationship="Numero9Model.FK_login_tipo_login" FromRole="login" ToRole="tipo_login" />
+  </EntityType>
+  <EntityType Name="Recinto">
+    <Key>
+      <PropertyRef Name="id_recinto" />
+    </Key>
+    <Property Name="id_recinto" Type="Int32" Nullable="false" />
+    <Property Name="nombre_recinto" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="capacidad" Type="Int32" />
+    <Property Name="id_direccion_recinto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="drec" Relationship="Numero9Model.FK_Recinto_drec" FromRole="Recinto" ToRole="drec" />
+    <NavigationProperty Name="evento" Relationship="Numero9Model.FK_evento_evento" FromRole="Recinto" ToRole="evento" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tipo_login">
+    <Key>
+      <PropertyRef Name="id_tipo_usuario" />
+    </Key>
+    <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="login" Relationship="Numero9Model.FK_login_tipo_login" FromRole="tipo_login" ToRole="login" />
+  </EntityType>
+  <Association Name="FK_login_datos_usuarios">
+    <End Role="datos_usuarios" Type="Numero9Model.datos_usuarios" Multiplicity="1" />
+    <End Role="login" Type="Numero9Model.login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="datos_usuarios">
+        <PropertyRef Name="id_datos_usuarios" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="id_datos_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recinto_drec">
+    <End Role="drec" Type="Numero9Model.drec" Multiplicity="1" />
+    <End Role="Recinto" Type="Numero9Model.Recinto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="drec">
+        <PropertyRef Name="id_direccion_recinto" />
+      </Principal>
+      <Dependent Role="Recinto">
+        <PropertyRef Name="id_direccion_recinto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_evento_evento">
+    <End Role="Recinto" Type="Numero9Model.Recinto" Multiplicity="1" />
+    <End Role="evento" Type="Numero9Model.evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recinto">
+        <PropertyRef Name="id_recinto" />
+      </Principal>
+      <Dependent Role="evento">
+        <PropertyRef Name="id_recinto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_login_tipo_login">
+    <End Role="tipo_login" Type="Numero9Model.tipo_login" Multiplicity="1" />
+    <End Role="login" Type="Numero9Model.login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_login">
+        <PropertyRef Name="id_tipo_usuario" />
+      </Principal>
+      <Dependent Role="login">
+        <PropertyRef Name="id_tipo_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

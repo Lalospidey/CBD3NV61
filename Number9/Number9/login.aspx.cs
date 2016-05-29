@@ -13,5 +13,23 @@ namespace Number9
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script type='text/javascript'> window.open('Cliente.aspx','_self'); </script>");
+            Response.Write("<script type='text/javascript'> window.open('Administrador.aspx','_self'); </script>");
+ 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script type='text/javascript'> window.open('RegistroUsuarios.aspx','_self'); </script>");
+        }
     }
 }
