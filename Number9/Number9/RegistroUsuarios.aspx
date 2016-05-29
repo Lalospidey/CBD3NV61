@@ -28,21 +28,23 @@
         <br />
         Correo&nbsp;&nbsp;&nbsp; Electronico:<asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         <br />
-        Fecha de Nacimiento:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        Fecha de Nacimiento:<asp:TextBox ID="TextBox5" runat="server" 
+            TextMode="Date"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label3" runat="server" Text="Usuario"></asp:Label>
         :<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        Contraseña:<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        Contraseña:<asp:TextBox ID="TextBox7" runat="server" TextMode="Password"></asp:TextBox>
         <br />
         Confirmar contraseña: 
-        <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox8" runat="server" TextMode="Password"></asp:TextBox>
         <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Enviar" />
 &nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Limpiar" />
+        <asp:Button ID="Button2" runat="server" Text="Limpiar" 
+            onclick="Button2_Click" />
         <br />
     
     </div>
