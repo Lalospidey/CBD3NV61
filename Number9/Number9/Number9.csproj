@@ -99,6 +99,7 @@
     <Compile Include="RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebMsgBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.config" />
