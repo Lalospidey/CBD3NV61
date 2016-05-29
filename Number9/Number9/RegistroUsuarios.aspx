@@ -20,7 +20,7 @@
         <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
-        Apellido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Paterno:<asp:TextBox ID="TextBox2" 
+        &nbsp;Apellido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Paterno:<asp:TextBox ID="TextBox2" 
             runat="server"></asp:TextBox>
         <br />
         Apellido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Materno:<asp:TextBox ID="TextBox3" 
@@ -30,7 +30,16 @@
         <br />
         Fecha de Nacimiento:<asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
         <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label3" runat="server" Text="Usuario"></asp:Label>
+        :<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Contraseña:<asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        <br />
+        Confirmar contraseña: 
+        <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Enviar" />
 &nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" Text="Limpiar" />
