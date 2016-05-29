@@ -10,9 +10,10 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 namespace Number9
 {
+    
    public partial class login : System.Web.UI.Page
     {
-       
+       public static int idusu;
         private string strcon = WebConfigurationManager.ConnectionStrings["Numero9ConnectionString"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,12 +29,14 @@ namespace Number9
             con.Open();
             cmd.ExecuteNonQuery();
             SqlDataReader dr = cmd.ExecuteReader();
+            
             int contador = 0;
             int x = 0;
             while (dr.Read())
             {
                 contador++;
                 x = Convert.ToInt32(dr[3]);
+                idusu= Convert.ToInt32(dr[0]);
             }
             if (contador == 1 && x == 2)
             {
