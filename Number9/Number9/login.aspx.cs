@@ -10,7 +10,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 namespace Number9
 {
-    public partial class login : System.Web.UI.Page
+   public partial class login : System.Web.UI.Page
     {
        
         private string strcon = WebConfigurationManager.ConnectionStrings["Numero9ConnectionString"].ConnectionString;
@@ -28,15 +28,44 @@ namespace Number9
             con.Open();
             cmd.ExecuteNonQuery();
             SqlDataReader dr = cmd.ExecuteReader();
-            
-            
-            con.Close();
-            
-            Response.Write("<script type='text/javascript'> window.open('Cliente.aspx','_self'); </script>");
-            Response.Write("<script type='text/javascript'> window.open('Administrador.aspx','_self'); </script>");
- 
-        }
+            int contador = 0;
+            int x = 0;
+            while (dr.Read())
+            {
+                contador++;
+                x = Convert.ToInt32(dr[3]);
+            }
+            if (contador == 1 && x == 2)
+            {
+                Response.Write("<script type='text/javascript'> window.open('Administrador.aspx','_self'); </script>");
+            }
+            if (contador == 1 && (x == 3 || x == 1))
+            {
+                Response.Write("<script type='text/javascript'> window.open('Cliente.aspx','_self'); </script>");
+            }
+            if (contador < 1 && TextBox1.Text.Length == 0 && TextBox2.Text.Length == 0)
+            {
+                string message = "No haz introducido ningun dato. ";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + message + "');", true);
 
+            }
+            if (contador < 1 && TextBox1.Text.Length == 0 && TextBox2.Text.Length != 0)
+            {
+                string message = "No haz introducido el nombre de usuario. ";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + message + "');", true);
+            }
+            if (contador < 1 && TextBox1.Text.Length != 0 && TextBox2.Text.Length == 0)
+            {
+                string message = "No haz introducido la contraseña. ";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + message + "');", true);
+            }
+            if (contador < 1 && TextBox1.Text.Length != 0 && TextBox2.Text.Length != 0)
+            {
+                string message = "Usuario no valido . ";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + message + "');", true);
+            }
+            con.Close();
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             TextBox1.Text = "";
