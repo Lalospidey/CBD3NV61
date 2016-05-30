@@ -19,7 +19,8 @@
         <asp:Button ID="Button1" runat="server" Text="Agregar Evento" 
             onclick="Button1_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Consultar Evento" />
+        <asp:Button ID="Button2" runat="server" Text="Consultar Usuarios" 
+            onclick="Button2_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button3" runat="server" Text="Borrar Evento" />
 &nbsp;&nbsp;&nbsp;
@@ -30,28 +31,30 @@
         <asp:Button ID="Button5" runat="server" Text="Aceptar" />
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-            DataKeyNames="id_evento" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:BoundField DataField="id_evento" HeaderText="id_evento" ReadOnly="True" 
-                    SortExpression="id_evento" />
-                <asp:BoundField DataField="nombre_evento" HeaderText="nombre_evento" 
-                    SortExpression="nombre_evento" />
-                <asp:BoundField DataField="id_recinto" HeaderText="id_recinto" 
-                    SortExpression="id_recinto" />
-                <asp:BoundField DataField="id_precios" HeaderText="id_precios" 
-                    SortExpression="id_precios" />
-                <asp:BoundField DataField="fecha" HeaderText="fecha" SortExpression="fecha" />
-                <asp:BoundField DataField="vendidos" HeaderText="vendidos" 
-                    SortExpression="vendidos" />
-            </Columns>
+        <asp:GridView ID="panel_principal" runat="server">
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:Numero9ConnectionString %>" 
-            SelectCommand="SELECT * FROM [evento]"></asp:SqlDataSource>
     </p>
     <p>
-        &nbsp;</p>
-    </form>
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        Zona</p>
+    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+&nbsp;Precio<br />
+    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+    Calle<br />
+    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+    Colonia<br />
+    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+    Delegacion
+    <br />
+    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+    Nombre Recinto<br />
+    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+    Capacidad<br />
+    <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+    Nombre Evento<br />
+    <asp:TextBox ID="TextBox10" runat="server" TextMode="Date"></asp:TextBox>
+    Fecha<br />
+    <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+&nbsp;Vendidos</form>
 </body>
 </html>
