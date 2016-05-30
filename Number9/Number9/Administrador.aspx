@@ -10,18 +10,25 @@
     <form id="form1" runat="server">
     <div>
     
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Bienvenido
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    
     </div>
     <p>
-        <asp:Button ID="Button1" runat="server" Text="Agregar Evento" />
+        <asp:Button ID="Button1" runat="server" Text="Agregar Evento" 
+            onclick="Button1_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" Text="Consultar Evento" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button3" runat="server" Text="Borrar Evento" />
 &nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button4" runat="server" Text="Modificar Evento" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+&nbsp;&nbsp;
+        <asp:Button ID="Button5" runat="server" Text="Aceptar" />
     </p>
-    <p>
-        &nbsp;</p>
     <p>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             DataKeyNames="id_evento" DataSourceID="SqlDataSource1">
@@ -35,14 +42,16 @@
                 <asp:BoundField DataField="id_precios" HeaderText="id_precios" 
                     SortExpression="id_precios" />
                 <asp:BoundField DataField="fecha" HeaderText="fecha" SortExpression="fecha" />
-                <asp:BoundField DataField="Id_usuario" HeaderText="Id_usuario" 
-                    SortExpression="Id_usuario" />
+                <asp:BoundField DataField="vendidos" HeaderText="vendidos" 
+                    SortExpression="vendidos" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Numero9ConnectionString %>" 
             SelectCommand="SELECT * FROM [evento]"></asp:SqlDataSource>
     </p>
+    <p>
+        &nbsp;</p>
     </form>
 </body>
 </html>

@@ -77,5 +77,7 @@ namespace Number9
         {
             TextBox1.Text = ""; TextBox2.Text = ""; TextBox3.Text = ""; TextBox4.Text = ""; TextBox5.Text = ""; TextBox6.Text = ""; TextBox7.Text = ""; TextBox8.Text = "";
         }
+
+        
     }
 }
